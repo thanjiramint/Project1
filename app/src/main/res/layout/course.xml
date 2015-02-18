@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course1"
+        android:id="@+id/courseSel"
+        android:layout_marginTop="57dp"
+        android:textIsSelectable="true"
+        android:textSize="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total notes :"
+        android:id="@+id/textView9"
+        android:textSize="32dp"
+        android:layout_below="@+id/courseSel"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="See summary"
+        android:id="@+id/summarylist"
+        android:layout_below="@+id/textView34"
+        android:layout_marginTop="53dp"
+        android:layout_alignParentEnd="true"
+        android:onClick="buttonClickedCourse" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add new summary"
+        android:id="@+id/addsummary"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/summarylist"
+        android:layout_alignParentStart="true"
+        android:onClick="buttonClickedCourse" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to menu"
+        android:id="@+id/menu"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/addsummary"
+        android:layout_alignParentStart="true"
+        android:onClick="buttonClickedCourse" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Name :"
+        android:id="@+id/textView34"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/dates2"
+        android:layout_alignStart="@+id/textView35" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date:"
+        android:id="@+id/textView35"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/tts"
+        android:layout_alignStart="@+id/courseSel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/tts"
+        android:layout_marginStart="13dp"
+        android:textSize="26dp"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_toEndOf="@+id/textView9" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date1"
+        android:id="@+id/dates1"
+        android:layout_alignTop="@+id/textView35"
+        android:layout_toEndOf="@+id/textView35"
+        android:layout_marginStart="21dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date2"
+        android:id="@+id/dates2"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/dates1"
+        android:layout_alignStart="@+id/dates1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:id="@+id/times1"
+        android:layout_above="@+id/dates2"
+        android:layout_toEndOf="@+id/dates1"
+        android:layout_marginStart="26dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:id="@+id/times2"
+        android:layout_alignTop="@+id/dates2"
+        android:layout_alignStart="@+id/times1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/bookn"
+        android:layout_alignTop="@+id/textView34"
+        android:layout_toEndOf="@+id/dates2" />
+
+</RelativeLayout>
