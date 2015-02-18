@@ -69,11 +69,12 @@ public class AddCourse extends ActionBarActivity {
 
             result.putExtra("diff", diffi);*/
 
+            helper = new DBHelper(this);
+
             SQLiteDatabase db = helper.getWritableDatabase();
             ContentValues r = new ContentValues();
 
-            r.put("code", sCode);
-            r.put("book", sName);
+            r.put("course", sCode);
             r.put("credit", sCR);
             r.put("date1", sdate1);
             r.put("date2", sdate2);

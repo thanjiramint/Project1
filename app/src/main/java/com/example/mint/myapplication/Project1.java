@@ -143,7 +143,7 @@ if (cursor.getCount() > 0) {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 88) {
             if (resultCode == RESULT_OK) {
-                String code = data.getStringExtra("code");
+                String course = data.getStringExtra("course");
                 int credit = data.getIntExtra("credit", 0);
                 String diff = data.getStringExtra("diff");
                 String date1 = data.getStringExtra("date1");
@@ -153,7 +153,7 @@ if (cursor.getCount() > 0) {
 
                 SQLiteDatabase db = helper.getWritableDatabase();
                 ContentValues r = new ContentValues();
-                r.put("code", code);
+                r.put("course", course);
                 r.put("credit", credit);
                 r.put("date1", date1);
                 r.put("date2", date2);
