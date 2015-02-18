@@ -31,14 +31,14 @@ public class AddSummary extends ActionBarActivity {
         EditText date_add = (EditText)findViewById(R.id.date_add);
         EditText note = (EditText)findViewById(R.id.note);
 
-
+/*
         String sTopic = topic.getText().toString();
         String sDate = date_add.getText().toString();
         String sNote = note.getText().toString();
 
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT _id ,course FROM course;", null);
-        cursor.moveToFirst(); // get the first row
+        Cursor cursor = db.rawQuery("SELECT _id ,course FROM course where _id = "+id+";", null);
+     //   cursor.moveToFirst(); // get the first row
         String sCourse = cursor.getString(1); // get the first column
         //?? เช็คidให้ตรงกับที่เราจิ้ม ทำยังไง??
 
@@ -58,7 +58,7 @@ public class AddSummary extends ActionBarActivity {
 
             this.setResult(RESULT_OK, result);
             this.finish();
-        }
+        }*/
     }
 
 

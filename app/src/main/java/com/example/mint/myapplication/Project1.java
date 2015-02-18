@@ -31,24 +31,38 @@ public class Project1 extends ActionBarActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
+/***
         // This method is called when this activity is put foreground.
+        helper = new CourseDBHelper(this.getApplicationContext());
+        SQLiteDatabase db = helper.getWritableDatabase();
+        ContentValues r = new ContentValues();
+        r.put("code", code);
+        r.put("credit", credit);
+        r.put("grade", grade);
+        r.put("value", gradeToValue(grade));
+        long new_id = db.insert("course", null, r);
+
+***/
 
         SQLiteDatabase db = helper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT SUM(course) TTC, SUM(note) TtN FROM summary DISTINCT;", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM summary;", null);
         cursor.moveToFirst(); // get the first row
-        int TTC = cursor.getInt(0); // get the first column
-        int TtN = cursor.getInt(1);
 
-        Log.d("summary","TotalCourse is "+ TTC+"");
-        Log.d("summary","TotalNote is "+ TtN+"");
+if (cursor.getCount() > 0) {
 
-        TextView tv = (TextView)findViewById(R.id.tts);
-        TextView tv1 = (TextView)findViewById(R.id.ttc);
+    int TTC = cursor.getInt(0); // get the first column
+    int TtN = cursor.getInt(1);
+
+    Log.d("summary", "TotalCourse is " + TTC + "");
+    Log.d("summary", "TotalNote is " + TtN + "");
+
+    TextView tv = (TextView) findViewById(R.id.tts);
+    TextView tv1 = (TextView) findViewById(R.id.ttc);
 
 
-        tv.setText(Integer.toString(TTC));
-        tv1.setText(Integer.toString(TtN));
+    tv.setText(Integer.toString(TTC));
+    tv1.setText(Integer.toString(TtN));
+}
 
     }
 
@@ -132,7 +146,6 @@ public class Project1 extends ActionBarActivity {
                 String code = data.getStringExtra("code");
                 int credit = data.getIntExtra("credit", 0);
                 String diff = data.getStringExtra("diff");
-                String book = data.getStringExtra("book");
                 String date1 = data.getStringExtra("date1");
                 String date2 = data.getStringExtra("date2");
                 String time1 = data.getStringExtra("time1");
@@ -142,7 +155,6 @@ public class Project1 extends ActionBarActivity {
                 ContentValues r = new ContentValues();
                 r.put("code", code);
                 r.put("credit", credit);
-                r.put("book", book);
                 r.put("date1", date1);
                 r.put("date2", date2);
                 r.put("time1", time1);

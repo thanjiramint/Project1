@@ -19,6 +19,7 @@ public class ListCourse extends ActionBarActivity implements AdapterView.OnItemC
 
     DBHelper helper;
     SimpleCursorAdapter adapter;
+    long selectedId;
 
 
 
@@ -31,13 +32,13 @@ public class ListCourse extends ActionBarActivity implements AdapterView.OnItemC
         helper = new DBHelper(this);
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor cursor = db.rawQuery(
-                "SELECT _id, code, ( credit || ' Credits, ' || diff) g from course;",
+                "SELECT _id, course, ( credit || ' Credits, ' || diff) g from course;",
                 null);
 
                 adapter = new SimpleCursorAdapter(this,
                 android.R.layout.simple_list_item_2,
                 cursor,
-                new String[] {"code","g"},
+                new String[] {"course","g"},
                 new int[] {android.R.id.text1, android.R.id.text2},0);
 
         ListView lv = (ListView)findViewById(R.id.listView);
@@ -58,7 +59,9 @@ public class ListCourse extends ActionBarActivity implements AdapterView.OnItemC
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View view,
                                    int position, long id) {
+        selectedId = id;
         SQLiteDatabase db = helper.getWritableDatabase();
+
 
         int n = db.delete("course","_id = ?",
                 new String[]{Long.toString(id)});

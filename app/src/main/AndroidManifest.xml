@@ -16,6 +16,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+        android:name=".ListCourse" >
+            </activity>
+        <activity
+            android:name=".AddCourse" >
+        </activity>
+        <activity
+            android:name=".AddSummary" >
+        </activity>
+        <activity
+            android:name=".courseseleted" >
+        </activity>
+        <activity
+            android:name=".schedule" >
+        </activity>
+        <activity
+            android:name=".ListSummary" >
+        </activity>
+        <activity
+            android:name=".summaryselected" >
+        </activity>
+
     </application>
 
 </manifest>
